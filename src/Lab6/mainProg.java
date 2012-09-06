@@ -17,6 +17,7 @@ public class mainProg {
 	public static void main(String[] args) 
 	{
 		
+		//oppgaver fra lab
 		Oppgaver oppg1, oppg2;
 		
 		oppg1 = new Oppgaver();
