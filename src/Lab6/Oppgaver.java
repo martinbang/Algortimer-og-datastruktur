@@ -20,7 +20,7 @@ public class Oppgaver {
 	// oppgave 1
 	public void oppgave1(String s) {
 		s = " ";
-		List ll = new LinkedList(Arrays.asList(premierLeague));
+		List<String> ll = new LinkedList(Arrays.asList(premierLeague));
 
 		System.out.println("String[] --> list -- iterer gjennom vært element"+ "\n");
 		Iterator iterator = ll.iterator();
