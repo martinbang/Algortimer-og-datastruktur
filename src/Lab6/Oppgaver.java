@@ -24,9 +24,10 @@ public class Oppgaver {
 
 		System.out.println("String[] --> list -- iterer gjennom vært element"+ "\n");
 		Iterator iterator = ll.iterator();
+		Collections.sort(ll);
 		while (iterator.hasNext()) {
 
-			Collections.sort(ll);
+			
 			System.out.println((String) iterator.next());
 		}
 
@@ -37,16 +38,22 @@ public class Oppgaver {
 		
 		System.out.println();
 		System.out.println();
+		System.out.println("Oppgave 2: "+"\n");
 		s = " ";
 		ArrayList<String> al = new ArrayList<String>(Arrays.asList(premierLeague));
 
 		Iterator iterator = al.iterator();
-
+		
+		Collections.sort(al);
 		while (iterator.hasNext()) {
-			Collections.sort(al);
+			
 			System.out.println((String) iterator.next());
 		}
 
 	}//end of oppgave2
 
+	public void oppgave3(String s){
+		
+		//Collections.sort(list, c)
+	}
 }// end of class

@@ -11,8 +11,6 @@ public class Pair <F,S>{
 		this.secound = secound;
 	}
 	
-	
-	
 	public void setFirst(F first) {
 		this.first = first;
 	}

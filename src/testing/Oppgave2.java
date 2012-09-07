@@ -1,6 +1,9 @@
-package Oblig1;
+package testing;
 
 import java.util.Random;
+
+import Oblig1.Pair;
+
 
 /***
  * Algoritmer og Datastruktur.

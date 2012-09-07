@@ -1,4 +1,4 @@
-package Oblig1;
+package testing;
 
 import java.util.Random;
 
