@@ -23,7 +23,7 @@ public class Oppgaver {
 		List<String> ll = new LinkedList(Arrays.asList(premierLeague));
 
 		System.out.println("String[] --> list -- iterer gjennom vært element"+ "\n");
-		Iterator iterator = ll.iterator();
+		Iterator<String> iterator = ll.iterator();
 		Collections.sort(ll);
 		while (iterator.hasNext()) {
 
@@ -42,7 +42,7 @@ public class Oppgaver {
 		s = " ";
 		ArrayList<String> al = new ArrayList<String>(Arrays.asList(premierLeague));
 
-		Iterator iterator = al.iterator();
+		Iterator<String> iterator = al.iterator();
 		
 		Collections.sort(al);
 		while (iterator.hasNext()) {
