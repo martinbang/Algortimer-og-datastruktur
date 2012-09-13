@@ -79,10 +79,11 @@ public class Oppgaver {
 		 Iterator<String> iterator = liste.iterator();
 		 
 		 Collections.sort(liste, mcr);
+	
 		 
 		 System.out.println();
 		 System.out.println("Oppgave 3:");
-		 System.out.println();
+		 
 		 
 		 while(iterator.hasNext()){
 			 System.out.println((String) iterator.next());
@@ -120,7 +121,7 @@ public class Oppgaver {
 		
 		Stack<String> sk = new Stack<String>();
 		
-		sk.push("Hallo");
+		sk.push("Test og push");
 		
 		for(int i = 0; i < premierLeague.length ; i++){
 			sk.add(premierLeague[i]);
