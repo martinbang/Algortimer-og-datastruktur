@@ -9,6 +9,12 @@ import java.util.List;
 import java.util.Stack;
 import java.util.TreeSet;
 
+/***
+ *  lab kapittel 6 Collections
+ * @author 490427
+ *
+ */
+
 public class Oppgaver {
 
 	private String[] premierLeague = { "Liverpool", "Manchester City",
