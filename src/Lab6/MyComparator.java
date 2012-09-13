@@ -2,6 +2,11 @@ package Lab6;
 
 import java.util.Comparator;
 
+/***
+ * Comperator interace blir brukt
+ * @author 490427
+ *
+ */
 public class MyComparator implements Comparator<String>{
 
 	@Override
