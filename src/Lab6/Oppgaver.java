@@ -6,6 +6,8 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Stack;
+import java.util.TreeSet;
 
 public class Oppgaver {
 
@@ -64,6 +66,7 @@ public class Oppgaver {
 	 */
 	public void oppgave3(String s){
 		
+		
 		 ArrayList<String> liste = new ArrayList(Arrays.asList(premierLeague)); 
 		 MyComparator mcr = new MyComparator();
 		 Iterator<String> iterator = liste.iterator();
@@ -76,8 +79,56 @@ public class Oppgaver {
 		 
 		 while(iterator.hasNext()){
 			 System.out.println((String) iterator.next());
-		 }
-		  
+		 }//end of while
+		  	
+	}//end of oppgave 3
+	
+	/***
+	 * Oppgave 4 treeset.
+	 * @param s, prøvd å duplisere 2 navn, treeset håndterer duplisering ved å fjerne det dupliserte
+	 */
+	public void oppgave4(String s){
 		
-	}
+		TreeSet<String> ts = new TreeSet<String>(Arrays.asList(premierLeague));
+		ts.add("Liverpool");
+		ts.add("Arsenal");
+		
+		Iterator<String> iterator = ts.iterator();
+		System.out.println();
+		System.out.println("Oppgave 4: ");
+		
+		while(iterator.hasNext()){
+			System.out.printf("%s", iterator.next()+"\n");
+			
+		}//end of while
+		
+	}//end of oppgave 4
+	
+	
+	/***
+	 * Oppgave 5, Bruk av Stack som container, bruker Collections med hensyn på Sk til sortering
+	 * @param s
+	 */
+	public void oppgave5(String s){
+		
+		Stack<String> sk = new Stack<String>();
+		
+		sk.push("Hallo");
+		
+		for(int i = 0; i < premierLeague.length ; i++){
+			sk.add(premierLeague[i]);
+		}
+		
+		System.out.println();
+		System.out.println("Oppgave 5");
+		
+		Collections.sort(sk);
+		Iterator<String> iterator  = sk.iterator();
+		
+		while(iterator.hasNext()){
+			System.out.println((String)iterator.next());
+		}
+
+	}//end of oppgave 5
+	
 }// end of class

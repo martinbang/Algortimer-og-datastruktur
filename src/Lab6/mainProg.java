@@ -21,7 +21,7 @@ public class mainProg {
 	{
 		
 		//oppgaver fra lab
-		Oppgaver oppg1, oppg2, oppg3;
+		Oppgaver oppg1, oppg2, oppg3, oppg4, oppg5;
 		
 		oppg1 = new Oppgaver();
 		oppg1.oppgave1("Oppgave 1:");
@@ -31,6 +31,14 @@ public class mainProg {
 		
 		oppg3 = new Oppgaver();
 		oppg3.oppgave3("Oppgave 3: ");
+		
+		oppg4 = new Oppgaver();
+		oppg4.oppgave4("Oppgave 4");
+		
+		oppg5 = new Oppgaver();
+		oppg5.oppgave5("oppgave 5:");
+		
+		
 	
 		 
 		
