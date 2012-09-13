@@ -17,7 +17,10 @@ public class Oppgaver {
 
 	}// end of constructor
 
-	// oppgave 1
+	/***
+	 * Oppgave 1
+	 * @param s
+	 */
 	public void oppgave1(String s) {
 		s = " ";
 		List<String> ll = new LinkedList(Arrays.asList(premierLeague));
@@ -33,7 +36,10 @@ public class Oppgaver {
 
 	}//end of oppgave1
 
-	// oppgave 2
+	/***
+	 * Oppgave 2
+	 * @param s
+	 */
 	public void oppgave2(String s) {
 		
 		System.out.println();
@@ -52,8 +58,26 @@ public class Oppgaver {
 
 	}//end of oppgave2
 
+	/***
+	 * Oppgave 3
+	 * @param s
+	 */
 	public void oppgave3(String s){
 		
-		//Collections.sort(list, c)
+		 ArrayList<String> liste = new ArrayList(Arrays.asList(premierLeague)); 
+		 MyComparator mcr = new MyComparator();
+		 Iterator<String> iterator = liste.iterator();
+		 
+		 Collections.sort(liste, mcr);
+		 
+		 System.out.println();
+		 System.out.println("Oppgave 3:");
+		 System.out.println();
+		 
+		 while(iterator.hasNext()){
+			 System.out.println((String) iterator.next());
+		 }
+		  
+		
 	}
 }// end of class
