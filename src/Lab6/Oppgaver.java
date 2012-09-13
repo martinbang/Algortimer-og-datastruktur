@@ -2,6 +2,7 @@ package Lab6;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -129,11 +130,12 @@ public class Oppgaver {
 		System.out.println("Oppgave 5");
 		
 		Collections.sort(sk);
+		
 		Iterator<String> iterator  = sk.iterator();
 		
 		while(iterator.hasNext()){
 			System.out.println((String)iterator.next());
-		}
+		}//end og while
 
 	}//end of oppgave 5
 	
