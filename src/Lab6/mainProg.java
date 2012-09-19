@@ -9,7 +9,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 /***
- * testProgram for Lab kap 5. Oppgave1, 2 og 3.
+ * testProgram for Lab kap 5. Oppgave1, 2 ,3,4 og 5.
  * @author Martin
  *
  */
