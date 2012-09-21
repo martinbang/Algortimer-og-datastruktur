@@ -20,14 +20,15 @@ public class Oppgaver {
 	/**
 	 * Oppgave 1 Palindromes test
 	 */
-	public void Oppgave1() 
-	{
+	public void Oppgave1() {
+
+		System.out.println("Oppgave 1: ");
 		System.out.println("type a word to check if its a palindrome or not");
 		String x = scan.nextLine();
-		if(isPal(x))
-		System.out.println(x + " is a palindrome");
+		if (isPal(x))
+			System.out.println(x + " is a palindrome");
 		else
-		System.out.println(x + " is not a palindrome");
+			System.out.println(x + " is not a palindrome");
 
 	}
 
@@ -35,6 +36,8 @@ public class Oppgaver {
 	 * Oppgave 2 Greatest Common Divisor, GCD) for to tall
 	 */
 	public void Oppgave2() {
+		System.out.println();
+		System.out.println("oppgave 2");
 		System.out.print("Enter first intger");
 		int n1 = scan.nextInt();
 		System.out.println("Enter secound integer:");
@@ -50,31 +53,38 @@ public class Oppgaver {
 	/**
 	 * Oppgave3
 	 */
-	public void Oppgave3() 
-	{
+	public void Oppgave3() {
 
 	}
 
-	
-	public boolean isPal(String s){
-		
-		if(s.length() == 0 || s.length() == 1)
+	public boolean isPal(String s) {
+
+		if (s.length() == 0 || s.length() == 1) {
 			return true;
-			// din kode
-		else
-			return false;
-		
+		}
+
+		if (s.charAt(0) == s.charAt(s.length() - 1)) {
+			System.out.println(s.substring(1, s.length() - 1));
+			return isPal(s.substring(1, s.length() - 1));
+		}
+
+		return false;
+
 	}
 
 	// Oppgave 2, Method GDC
-	public int gdc(int m, int n) 
-	{
+	public int gdc(int m, int n) {
 
-		if (n == 0)
-			return m;
-		else if (n > m)
-			return gdc(n, m);
+		if (m % n == 0)
+			return n;
 		else
 			return gdc(n, m % n);
+
+		// metode 2 som det også kan gjøres på.
+		// men bruk ikke mer kode en nødvendig!
+		/*
+		 * if (n == 0) return m; else if (n > m) return gdc(n, m); else return
+		 * gdc(n, m % n);
+		 */
 	}
 }
