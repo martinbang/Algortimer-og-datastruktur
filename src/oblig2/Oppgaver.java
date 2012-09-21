@@ -23,7 +23,7 @@ public class Oppgaver {
 	public void Oppgave1() 
 	{
 		System.out.println("type a word to check if its a palindrome or not");
-		String x = sc.nextLine();
+		String x = scan.nextLine();
 		if(isPal(x))
 		System.out.println(x + " is a palindrome");
 		else
@@ -58,6 +58,11 @@ public class Oppgaver {
 	
 	public boolean isPal(String s){
 		
+		if(s.length() == 0 || s.length() == 1)
+			return true;
+			// din kode
+		else
+			return false;
 		
 	}
 
