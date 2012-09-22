@@ -28,17 +28,19 @@ public class Oppgaver {
 	 */
 
 	public void Oppgave2() {
-		System.out.println("Skrivv inn eks 10:");
+		System.out.println("Skrivv inn eks 123456:");
 		int n = scan.nextInt();
 
 		skrivUT(n);
+		System.out.println();
 	}
 
 	/**
 	 * Oppgave3  beregner n! (n fakultet)
 	 */
 	public void Oppgave3() 
-	{
+	{	
+		System.out.println();
 		System.out.println("Skriv inn N tall du vil beregne fakultet til: ");
 		int n = scan.nextInt();
 		
@@ -51,7 +53,7 @@ public class Oppgaver {
 		if (n == 1)
 			return 1;
 		else
-			return sum(n - 1) + 1;
+			return sum(n - 1) + n;
 
 	}
 	//Til oppgave 2
@@ -59,7 +61,7 @@ public class Oppgaver {
 
 		if( n >= 10)
 			skrivUT( n / 10);
-			   System.out.println(n % 10 + " - ");
+			   System.out.print(n % 10 + " - ");
 		}
 	//Til oppgave 3
 	
