@@ -3,6 +3,7 @@ package Lab7;
 import java.util.Scanner;
 
 public class Oppgaver {
+	
 
 	Scanner scan = new Scanner(System.in);
 
@@ -34,11 +35,14 @@ public class Oppgaver {
 	}
 
 	/**
-	 * Oppgave3
+	 * Oppgave3  beregner n! (n fakultet)
 	 */
 	public void Oppgave3() 
 	{
-
+		System.out.println("Skriv inn N tall du vil beregne fakultet til: ");
+		int n = scan.nextInt();
+		
+		System.out.println(fakultet(n));
 	}
 	
 	//Til oppgave 1
@@ -52,11 +56,20 @@ public class Oppgaver {
 	}
 	//Til oppgave 2
 	public void skrivUT(int n) {
+
 		if( n >= 10)
 			skrivUT( n / 10);
-			   System.out.print(n % 10 + " - ");
+			   System.out.println(n % 10 + " - ");
 		}
-		
+	//Til oppgave 3
+	
+	public int fakultet(int n)
+	{
+		if(n == 1)
+			return 1;
+		else
+			return n * fakultet(n-1);
+	}
 
 	
 

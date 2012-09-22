@@ -15,6 +15,9 @@ public class Main {
 		
 		oppg2 = new Oppgaver();
 		oppg2.Oppgave2();
+		
+		oppg3 = new Oppgaver();
+		oppg3.Oppgave3();
 	}
 
 }
