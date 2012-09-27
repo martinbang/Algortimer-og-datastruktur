@@ -17,17 +17,15 @@ public class Circle {
 		return farge;
 	}
 
-	public void setFarge(String farge) {
-		this.farge = farge;
-	}
+	
+	
 
 	public double getRadius() {
-		return radius;
+		return Math.PI * Math.pow(radius, 2);
 	}
 
-	public void setRadius(double radius) {
-		this.radius = radius;
-	}
+	
+
 
 	@Override
 	public String toString() {
