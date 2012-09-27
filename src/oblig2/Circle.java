@@ -29,10 +29,10 @@ public class Circle {
 		this.radius = radius;
 	}
 
-	/*@Override
+	@Override
 	public String toString() {
 		return "Circle [farge=" + farge + ", radius=" + radius + "]";
-	}*/
+	}
 	
 	
 
