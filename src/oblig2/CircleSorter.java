@@ -11,17 +11,21 @@ public class CircleSorter {
 
 		Integer[] list = { 2, 3, 2, 5, 6, 1, -2, 3, 14, 12 };
 		Sort.quicksort(list);
-		printList(list);
+		printOutList(list);
 
-		Circle[] list1 = { new Circle("Red", 3), new Circle("Green", 8),
-				new Circle("Blue", 12), new Circle("Yellow", 10),
-				new Circle("Blue", 11), new Circle("Yellow", 11) };
+		Circle[] list1 = { new Circle("Red", 3), 
+						   new Circle("Green", 8),
+						   new Circle("Blue", 12), 
+						   new Circle("Yellow", 10),
+						   new Circle("Blue", 11), 
+						   new Circle("Yellow", 11) 
+						};
 
 		quicksort(list1, new CircleSorter_Color());
-		printList(list1);
+		printOutList(list1);
 
-		//quicksort(list1, new CircleAreaComparator());
-		//printList(list1);
+		// quicksort(list1, new CircleAreaComparator());
+		// printList(list1);
 	}
 
 	private static final int CUTOFF = 10;
@@ -57,14 +61,6 @@ public class CircleSorter {
 			if (c.compare(a[high], a[middle]) < 0)
 				Sort.swapReferences(a, middle, high);
 
-			// if( a[ middle ].compareTo( a[ low ] ) < 0 )
-			// Sort.swapReferences( a, low, middle );
-			// if( a[ high ].compareTo( a[ low ] ) < 0 )
-			// Sort.swapReferences( a, low, high );
-			// if( a[ high ].compareTo( a[ middle ] ) < 0 )
-			// Sort.swapReferences( a, middle, high );
-
-			// Place pivot at position high - 1
 			Sort.swapReferences(a, middle, high - 1);
 			Object pivot = a[high - 1];
 
@@ -77,14 +73,7 @@ public class CircleSorter {
 					;
 				if (i >= j)
 					break;
-				Sort.swapReferences(a, i, j);
-				// while( a[ ++i ].compareTo( pivot ) < 0 )
-				// ;
-				// while( pivot.compareTo( a[ --j ] ) < 0 )
-				// ;
-				// if( i >= j )
-				// break;
-				// Sort.swapReferences( a, i, j );
+				Sort.swapReferences(a, i, j);		
 			}
 
 			// Restore pivot
@@ -99,11 +88,11 @@ public class CircleSorter {
 	 * Internal insertion sort routine for subarrays that is used by quicksort.
 	 * 
 	 * @param a
-	 *  an array of Comparable items.
+	 *            an array of Comparable items.
 	 * @param low
-	 *   the left-most index of the subarray.
+	 *            the left-most index of the subarray.
 	 * @param n
-	 *    the number of items to sort.
+	 *            the number of items to sort.
 	 */
 	public static void insertionSort(Object[] a, int low, int high,
 			Comparator<Object> c) {
@@ -120,7 +109,7 @@ public class CircleSorter {
 	/**
 	 * Print the contents of a list
 	 */
-	public static <E> void printList(E[] list) {
+	public static <E> void printOutList(E[] list) {
 		for (int i = 0; i < list.length; i++)
 			System.out.print(list[i] + " ");
 		System.out.println();

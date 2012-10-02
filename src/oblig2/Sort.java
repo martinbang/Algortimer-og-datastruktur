@@ -174,7 +174,7 @@ public class Sort {
 	 * Quicksort algorithm.
 	 * 
 	 * @param a
-	 *            an array of Comparable items.
+	 *           an array of Comparable items.
 	 */
 	public static <AnyType extends Comparable<? super AnyType>> void quicksort(
 			AnyType[] a) {
