@@ -11,21 +11,14 @@ public class Circle {
 		this.radius = radius;
 		
 	}
-	
 
 	public String getFarge() {
 		return farge;
 	}
 
-	
-	
-
 	public double getRadius() {
 		return Math.PI * Math.pow(radius, 2);
 	}
-
-	
-
 
 	@Override
 	public String toString() {

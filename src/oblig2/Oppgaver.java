@@ -50,12 +50,6 @@ public class Oppgaver {
 
 	}
 
-	/**
-	 * Oppgave3
-	 */
-	public void Oppgave3() {
-
-	}
 
 	public boolean isPal(String s) {
 

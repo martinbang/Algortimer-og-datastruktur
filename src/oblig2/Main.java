@@ -17,10 +17,13 @@ public class Main {
 		
 		oppg2 = new Oppgaver();
 		oppg2.Oppgave2();
+		
+		
+		
 	}
 	
 	
-	/*public static <E> void quickSort(E[] list,
+/*	public static <E> void quickSort(E[] list,
 		    Comparator<? super E> comparator) {
 		    quickSort(list, 0, list.length - 1, comparator);
 		}*/
