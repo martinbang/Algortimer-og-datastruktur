@@ -1,5 +1,6 @@
 package oblig2;
 
+import java.util.Comparator;
 import java.util.Random;
 
 public class Sort {
@@ -22,84 +23,6 @@ public class Sort {
 		}
 	}
 
-	/**
-	 * Shellsort, using Shell's (poor) increments.
-	 * 
-	 * @param a
-	 *            an array of Comparable items.
-	 */
-	public static <AnyType extends Comparable<? super AnyType>> void shellsort(
-			AnyType[] a) {
-		int j;
-
-		for (int gap = a.length / 2; gap > 0; gap /= 2)
-			for (int i = gap; i < a.length; i++) {
-				AnyType tmp = a[i];
-				for (j = i; j >= gap && tmp.compareTo(a[j - gap]) < 0; j -= gap)
-					a[j] = a[j - gap];
-				a[j] = tmp;
-			}
-	}
-
-	/**
-	 * Internal method for heapsort.
-	 * 
-	 * @param i
-	 *            the index of an item in the heap.
-	 * @return the index of the left child.
-	 */
-	private static int leftChild(int i) {
-		return 2 * i + 1;
-	}
-
-	/**
-	 * Internal method for heapsort that is used in deleteMax and buildHeap.
-	 * 
-	 * @param a
-	 *            an array of Comparable items.
-	 * @index i the position from which to percolate down.
-	 * @int n the logical size of the binary heap.
-	 */
-	private static <AnyType extends Comparable<? super AnyType>> void percDown(
-			AnyType[] a, int i, int n) {
-		int child;
-		AnyType tmp;
-
-		for (tmp = a[i]; leftChild(i) < n; i = child) {
-			child = leftChild(i);
-			if (child != n - 1 && a[child].compareTo(a[child + 1]) < 0)
-				child++;
-			if (tmp.compareTo(a[child]) < 0)
-				a[i] = a[child];
-			else
-				break;
-		}
-		a[i] = tmp;
-	}
-
-	/**
-	 * Standard heapsort.
-	 * 
-	 * @param a
-	 *            an array of Comparable items.
-	 */
-	public static <AnyType extends Comparable<? super AnyType>> void heapsort(
-			AnyType[] a) {
-		for (int i = a.length / 2 - 1; i >= 0; i--)
-			/* buildHeap */
-			percDown(a, i, a.length);
-		for (int i = a.length - 1; i > 0; i--) {
-			swapReferences(a, 0, i); /* deleteMax */
-			percDown(a, 0, i);
-		}
-	}
-
-	/**
-	 * Mergesort algorithm.
-	 * 
-	 * @param a
-	 *            an array of Comparable items.
-	 */
 	public static <AnyType extends Comparable<? super AnyType>> void mergeSort(
 			AnyType[] a) {
 		AnyType[] tmpArray = (AnyType[]) new Comparable[a.length];
@@ -174,7 +97,7 @@ public class Sort {
 	 * Quicksort algorithm.
 	 * 
 	 * @param a
-	 *           an array of Comparable items.
+	 *            an array of Comparable items.
 	 */
 	public static <AnyType extends Comparable<? super AnyType>> void quicksort(
 			AnyType[] a) {
@@ -334,9 +257,6 @@ public class Sort {
 			insertionSort(a, left, right);
 	}
 
-	private static final int NUM_ITEMS = 1000;
-	private static int theSeed = 1;
-
 	private static void checkSort(Integer[] a) {
 		for (int i = 0; i < a.length; i++)
 			if (a[i] != i)
@@ -344,5 +264,50 @@ public class Sort {
 		System.out.println("Finished checksort");
 	}
 
+	public static <E> void quickSort(E[] list, Comparator<? super E> comparator) {
+		quickSort(list, 0, list.length - 1, comparator);
+	}
 	
+	
+	private static <AnyType> void quicksort(AnyType[] a, int left, int right,
+			Comparator<? super E> comparator) {
+		if (left + CUTOFF <= right) {
+			AnyType pivot = median3(a, left, right);
+
+			// Begin partitioning
+			int i = left, j = right - 1;
+			for (;;) {
+				while (a[++i].compareTo(pivot) < 0) {
+				}
+				while (a[--j].compareTo(pivot) > 0) {
+				}
+				if (i < j)
+					swapReferences(a, i, j);
+				else
+					break;
+			}
+
+			swapReferences(a, i, right - 1); // Restore pivot
+
+			quicksort(a, left, i - 1); // Sort small elements
+			quicksort(a, i + 1, right); // Sort large elements
+		} else
+			// Do an insertion sort on the subarray
+			insertionSort(a, left, right);
+	}
+	
+	private static <AnyType> AnyType median3(
+			AnyType[] a, int left, int right, Comparator<? super E>comparator) {
+		int center = (left + right) / 2;
+		if (a[center].compareTo(a[left]) < 0)
+			swapReferences(a, left, center);
+		if (a[right].compareTo(a[left]) < 0)
+			swapReferences(a, left, right);
+		if (a[right].compareTo(a[center]) < 0)
+			swapReferences(a, center, right);
+
+		// Place pivot at position right - 1
+		swapReferences(a, center, right - 1);
+		return a[right - 1];
+	}
 }
