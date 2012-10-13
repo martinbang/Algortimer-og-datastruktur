@@ -37,16 +37,9 @@ public class mainProg {
 		
 		oppg5 = new Oppgaver();
 		oppg5.oppgave5("oppgave 5:");
-		
-		
+				
 	
-		 
-		
-		 
-
-
+	
 	}//end of main
 	
-	
-
 }//end of class

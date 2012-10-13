@@ -30,6 +30,10 @@ public class Oppgaver {
 	 * Oppgave 1
 	 * @param s
 	 */
+	
+	
+	
+	
 	public void oppgave1(String s) {
 		s = " ";
 		List<String> ll = new LinkedList(Arrays.asList(premierLeague));
@@ -38,7 +42,7 @@ public class Oppgaver {
 		Iterator<String> iterator = ll.iterator();
 		Collections.sort(ll);
 		while (iterator.hasNext()) {
-
+			
 			
 			System.out.println((String) iterator.next());
 		}
@@ -141,3 +145,5 @@ public class Oppgaver {
 	}//end of oppgave 5
 	
 }// end of class
+
+
