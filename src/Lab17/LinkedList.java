@@ -37,6 +37,10 @@ public class LinkedList<AnyType>
  {
      header = new ListNode<AnyType>( null );
  }
+ 
+ public void last(){
+	 
+ }
 
  /**
   * Test if the list is logically empty.
