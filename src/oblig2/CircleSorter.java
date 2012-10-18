@@ -10,7 +10,7 @@ public class CircleSorter {
 	public static void main(String[] args) {
 
 		Integer[] list = { 2, 3, 2, 5, 6, 1, -2, 3, 14, 12 };
-		Sort.quicksort(list);
+		//Sort.quicksort(list);
 		printOutList(list);
 
 		Circle[] list1 = { new Circle("Red", 3), 
@@ -21,7 +21,7 @@ public class CircleSorter {
 						   new Circle("Yellow", 11) 
 						};
 
-		quicksort(list1, new CircleSorter_Color());
+		//quicksort(list1, new CircleSorter_Color());
 		printOutList(list1);
 
 		// quicksort(list1, new CircleAreaComparator());

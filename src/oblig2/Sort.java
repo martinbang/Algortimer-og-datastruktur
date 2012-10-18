@@ -1,16 +1,16 @@
-package oblig2;
+/*package oblig2;
 
 import java.util.Comparator;
 import java.util.Random;
 
 public class Sort {
 
-	/**
+	*//**
 	 * Simple insertion sort.
 	 * 
 	 * @param a
 	 *            an array of Comparable items.
-	 */
+	 *//*
 	public static <AnyType extends Comparable<? super AnyType>> void insertionSort(
 			AnyType[] a) {
 		int j;
@@ -30,7 +30,7 @@ public class Sort {
 		mergeSort(a, tmpArray, 0, a.length - 1);
 	}
 
-	/**
+	*//**
 	 * Internal method that makes recursive calls.
 	 * 
 	 * @param a
@@ -41,7 +41,7 @@ public class Sort {
 	 *            the left-most index of the subarray.
 	 * @param right
 	 *            the right-most index of the subarray.
-	 */
+	 *//*
 	private static <AnyType extends Comparable<? super AnyType>> void mergeSort(
 			AnyType[] a, AnyType[] tmpArray, int left, int right) {
 		if (left < right) {
@@ -52,7 +52,7 @@ public class Sort {
 		}
 	}
 
-	/**
+	*//**
 	 * Internal method that merges two sorted halves of a subarray.
 	 * 
 	 * @param a
@@ -65,7 +65,7 @@ public class Sort {
 	 *            the index of the start of the second half.
 	 * @param rightEnd
 	 *            the right-most index of the subarray.
-	 */
+	 *//*
 	private static <AnyType extends Comparable<? super AnyType>> void merge(
 			AnyType[] a, AnyType[] tmpArray, int leftPos, int rightPos,
 			int rightEnd) {
@@ -93,12 +93,12 @@ public class Sort {
 			a[rightEnd] = tmpArray[rightEnd];
 	}
 
-	/**
+	*//**
 	 * Quicksort algorithm.
 	 * 
 	 * @param a
 	 *            an array of Comparable items.
-	 */
+	 *//*
 	public static <AnyType extends Comparable<? super AnyType>> void quicksort(
 			AnyType[] a) {
 		quicksort(a, 0, a.length - 1);
@@ -106,7 +106,7 @@ public class Sort {
 
 	private static final int CUTOFF = 3;
 
-	/**
+	*//**
 	 * Method to swap to elements in an array.
 	 * 
 	 * @param a
@@ -115,7 +115,7 @@ public class Sort {
 	 *            the index of the first object.
 	 * @param index2
 	 *            the index of the second object.
-	 */
+	 *//*
 	public static <AnyType> void swapReferences(AnyType[] a, int index1,
 			int index2) {
 		AnyType tmp = a[index1];
@@ -123,9 +123,9 @@ public class Sort {
 		a[index2] = tmp;
 	}
 
-	/**
+	*//**
 	 * Return median of left, center, and right. Order these and hide the pivot.
-	 */
+	 *//*
 	private static <AnyType extends Comparable<? super AnyType>> AnyType median3(
 			AnyType[] a, int left, int right) {
 		int center = (left + right) / 2;
@@ -141,7 +141,7 @@ public class Sort {
 		return a[right - 1];
 	}
 
-	/**
+	*//**
 	 * Internal quicksort method that makes recursive calls. Uses
 	 * median-of-three partitioning and a cutoff of 10.
 	 * 
@@ -151,7 +151,7 @@ public class Sort {
 	 *            the left-most index of the subarray.
 	 * @param right
 	 *            the right-most index of the subarray.
-	 */
+	 *//*
 	private static <AnyType extends Comparable<? super AnyType>> void quicksort(
 			AnyType[] a, int left, int right) {
 		if (left + CUTOFF <= right) {
@@ -179,7 +179,7 @@ public class Sort {
 			insertionSort(a, left, right);
 	}
 
-	/**
+	*//**
 	 * Internal insertion sort routine for subarrays that is used by quicksort.
 	 * 
 	 * @param a
@@ -188,7 +188,7 @@ public class Sort {
 	 *            the left-most index of the subarray.
 	 * @param right
 	 *            the right-most index of the subarray.
-	 */
+	 *//*
 	private static <AnyType extends Comparable<? super AnyType>> void insertionSort(
 			AnyType[] a, int left, int right) {
 		for (int p = left + 1; p <= right; p++) {
@@ -201,20 +201,20 @@ public class Sort {
 		}
 	}
 
-	/**
+	*//**
 	 * Quick selection algorithm. Places the kth smallest item in a[k-1].
 	 * 
 	 * @param a
 	 *            an array of Comparable items.
 	 * @param k
 	 *            the desired rank (1 is minimum) in the entire array.
-	 */
+	 *//*
 	public static <AnyType extends Comparable<? super AnyType>> void quickSelect(
 			AnyType[] a, int k) {
 		quickSelect(a, 0, a.length - 1, k);
 	}
 
-	/**
+	*//**
 	 * Internal selection method that makes recursive calls. Uses
 	 * median-of-three partitioning and a cutoff of 10. Places the kth smallest
 	 * item in a[k-1].
@@ -227,7 +227,7 @@ public class Sort {
 	 *            the right-most index of the subarray.
 	 * @param k
 	 *            the desired index (1 is minimum) in the entire array.
-	 */
+	 *//*
 	private static <AnyType extends Comparable<? super AnyType>> void quickSelect(
 			AnyType[] a, int left, int right, int k) {
 		if (left + CUTOFF <= right) {
@@ -311,3 +311,4 @@ public class Sort {
 		return a[right - 1];
 	}
 }
+*/
