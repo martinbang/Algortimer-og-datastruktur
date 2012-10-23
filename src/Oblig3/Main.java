@@ -52,6 +52,7 @@ public class Main {
 		while(it2.hasNext()){
 			System.out.println(it2.next());
 		}
+		System.out.println();
 		
 		/**
 		 * Oppgave 3
@@ -59,8 +60,22 @@ public class Main {
 		 */
 		System.out.println("Oppgave 3");
 		System.out.println("Antall Løvnoder: " + tree.returnNumberOfLeaves());
+		System.out.println();
+		/**
+		 * Oppgave 4
+		 * Skriv en metode som returnerer antall ikke-løvnoder i treet
+		 */
+		System.out.println("Oppgave 4:");
+		System.out.println("Antall ikke løvnoder: " + tree.returnNumberOfNoneLeaves());
+		System.out.println();
 		
-		
+		/**
+		 * Oppgave 5
+		 * Implementer findMin(), findMax (finner minste og største verdi i treet)
+		 */
+		System.out.println("Oppgave 5:");
+		System.out.println("Min: " + tree.findMin());
+		System.out.println("Max: " + tree.findMax());
 		
 	}//end of main
 

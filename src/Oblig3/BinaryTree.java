@@ -396,8 +396,11 @@ public class BinaryTree<E extends Comparable<E>> extends AbstractTree<E>
 			copy(root.right, tree);
 		}
 	}
-	
-	
+
+	/**
+	 * @author 490427 - Martin Bang Tøllefsen
+	 * @return - return the number of leaves
+	 */
 	public int returnNumberOfLeaves(){
 		return numberOfLeaves(root);
 	}
@@ -406,11 +409,92 @@ public class BinaryTree<E extends Comparable<E>> extends AbstractTree<E>
 	 * Skriv en metode som returnerer antall løvnoder i treet.
 	 */
 	public int numberOfLeaves(TreeNode<E> root){
+
 		if(root == null) 
 			return 0;
 		if(root.left == null && root.right == null)
 			return 1;
 		return numberOfLeaves(root.left) + numberOfLeaves(root.right);
+	}
+	
+	/**
+	 * Oppgave 4.
+	 * @author 490427 - Martin bang Tøllefsen
+	 * @return - numberOfNoneLeaves(root);
+	 */
+	public int returnNumberOfNoneLeaves(){
+		return numberOfNoneLeaves(root);
+	}
+	
+	/**Oppgave 4 - finne antal ikke løvnoder i treet
+	 * @author 490427 - Martin Bang Tøllefsen
+	 * @param root
+	 * @return
+	 */
+	public int numberOfNoneLeaves(TreeNode<E> root){
+
+		if(root == null)
+			return 0;
+		
+		int c = numberOfNoneLeaves(root.left) + numberOfNoneLeaves(root.right);
+		
+		if(root.left != null || root.right != null)
+			return 1;
+		return c;
+	}
+	
+	/**
+	 * Oppgave 5: findMin() finner minste verdi
+	 * @return
+	 * @author 490427 - Martin Bang Tøllefsen
+	 */
+	public E findMin(){
+		if (root == null) 
+			return null;
+		
+		  return findMin(root);
+	}
+	/**
+	 * Oppgave 5: findMin() finner minste verdi
+	 * @param root
+	 * @return
+	 * @author 490427 - Martin Bang Tøllefsen
+	 */
+	public E findMin(TreeNode<E> root){
+		 if (root == null) 
+			 return null;
+		 
+		  if (root.left != null) 
+			  return findMin(root.left);
+		  
+		  return root.element;
+	}
+	
+	/**
+	 * Oppgave 5: findMaX() finner største verdi
+	 * @return
+	 * @author 490427 - Martin Bang Tøllefsen
+	 */
+	public E findMax(){
+		if (root == null) 
+			return null;
+		
+	  return findMax(root);
+	}
+	/**
+	 * Oppgave 5: findMaX() finner største verdi
+	 * @param root
+	 * @return
+	 * @author 490427 - Martin Bang Tøllefsen
+	 */
+	public E findMax(TreeNode<E> root){
+		if (root == null) 
+			return null;
+		
+		  if (root.right != null) 
+			  return findMax(root.right);
+		  
+		  return root.element;
 	}
 }
 
