@@ -36,6 +36,16 @@ public class Main {
 			System.out.println(it1.next());
 		}
 		
+		//oppgave 2B
+		//Skriv en postorder iterator for treet. Skriv kode som tester.
+		System.out.println();
+		Iterator it2 = tree.postorderIterator();
+		while(it2.hasNext()){
+			System.out.println(it2.next());
+		}
+		
+		
+		
 	}//end of main
 
 }//end of class

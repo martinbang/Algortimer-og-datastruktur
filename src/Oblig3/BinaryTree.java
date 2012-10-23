@@ -211,9 +211,62 @@ public class BinaryTree<E extends Comparable<E>> extends AbstractTree<E>
 	}
 
 	/** Obtain an iterator. Use inorder. */
-	 public java.util.Iterator inorderIterator() {
-		    return new InorderIterator();
-		  }
+	public java.util.Iterator inorderIterator() {
+		return new InorderIterator();
+	}
+
+	/** Obtain a postorder iterator */
+	public java.util.Iterator postorderIterator() {
+		return new PostorderIterator();
+	}
+
+	// Inner class PostorderIterator
+	/**
+	 * @author Martin - Inner class PostOrderIterator
+	 */
+	class PostorderIterator implements java.util.Iterator {
+		// Store the elements in a list
+		private java.util.ArrayList<E> list = new java.util.ArrayList<E>();
+		private int current = 0; // Point to the current element in list
+
+		public PostorderIterator() {
+			postorder(); // Traverse binary tree and store elements in list
+		}
+
+		/** Postorder traversal from the root **/
+		private void postorder() {
+			postorder(root);
+		}
+
+		/** Postorder traversal from a subtree **/
+		private void postorder(TreeNode<E> root) {
+			if (root == null)
+				return;
+			postorder(root.left);
+			postorder(root.right);
+			list.add(root.element);
+		}
+
+		/** Next element for traversing? */
+		public boolean hasNext() {
+			if (current < list.size())
+				return true;
+
+			return false;
+		}
+
+		/** Get the current element and move cursor to the next */
+		public Object next() {
+			return list.get(current++);
+		}
+
+		/** Remove the current element and refresh the list */
+		public void remove() {
+			delete(list.get(current)); // Delete the current element
+			list.clear(); // Clear the list
+			inorder(); // Rebuild the list
+		}
+	}
 
 	// obtain preorderIterator Oppgave2
 	public java.util.Iterator preorderIterator() {
@@ -273,73 +326,73 @@ public class BinaryTree<E extends Comparable<E>> extends AbstractTree<E>
 		public java.util.Iterator inorderIterator() {
 			return new InorderIterator();
 		}
-		
+
 	}
 
-		// Inner class InorderIterator
-		class InorderIterator implements java.util.Iterator {
-			// Store the elements in a list
-			private java.util.ArrayList<E> list = new java.util.ArrayList<E>();
-			private int current = 0; // Point to the current element in list
+	// Inner class InorderIterator
+	class InorderIterator implements java.util.Iterator {
+		// Store the elements in a list
+		private java.util.ArrayList<E> list = new java.util.ArrayList<E>();
+		private int current = 0; // Point to the current element in list
 
-			public InorderIterator() {
-				inorder(); // Traverse binary tree and store elements in list
-			}
-
-			/** Inorder traversal from the root */
-			private void inorder() {
-				inorder(root);
-			}
-
-			/** Inorder traversal from a subtree */
-			private void inorder(TreeNode<E> root) {
-				if (root == null)
-					return;
-				inorder(root.left);
-				list.add(root.element);
-				inorder(root.right);
-			}
-
-			/** Next element for traversing? */
-			public boolean hasNext() {
-				if (current < list.size())
-					return true;
-
-				return false;
-			}
-
-			/** Get the current element and move cursor to the next */
-			public Object next() {
-				return list.get(current++);
-			}
-
-			/** Remove the current element and refresh the list */
-			public void remove() {
-				delete(list.get(current)); // Delete the current element
-				list.clear(); // Clear the list
-				inorder(); // Rebuild the list
-			}
+		public InorderIterator() {
+			inorder(); // Traverse binary tree and store elements in list
 		}
 
-		/** Remove all elements from the tree */
-		public void clear() {
-			root = null;
-			size = 0;
+		/** Inorder traversal from the root */
+		private void inorder() {
+			inorder(root);
 		}
 
-		public Object clone() {
-			BinaryTree<E> tree1 = new BinaryTree<E>();
-
-			copy(root, tree1);
-
-			return tree1;
+		/** Inorder traversal from a subtree */
+		private void inorder(TreeNode<E> root) {
+			if (root == null)
+				return;
+			inorder(root.left);
+			list.add(root.element);
+			inorder(root.right);
 		}
 
-		private void copy(TreeNode<E> root, BinaryTree<E> tree) {
-			if (root != null) {
-				tree.insert(root.element);
-				copy(root.left, tree);
-				copy(root.right, tree);
-			}
+		/** Next element for traversing? */
+		public boolean hasNext() {
+			if (current < list.size())
+				return true;
+
+			return false;
+		}
+
+		/** Get the current element and move cursor to the next */
+		public Object next() {
+			return list.get(current++);
+		}
+
+		/** Remove the current element and refresh the list */
+		public void remove() {
+			delete(list.get(current)); // Delete the current element
+			list.clear(); // Clear the list
+			inorder(); // Rebuild the list
 		}
 	}
+
+	/** Remove all elements from the tree */
+	public void clear() {
+		root = null;
+		size = 0;
+	}
+
+	public Object clone() {
+		BinaryTree<E> tree1 = new BinaryTree<E>();
+
+		copy(root, tree1);
+
+		return tree1;
+	}
+
+	private void copy(TreeNode<E> root, BinaryTree<E> tree) {
+		if (root != null) {
+			tree.insert(root.element);
+			copy(root.left, tree);
+			copy(root.right, tree);
+		}
+	}
+}
