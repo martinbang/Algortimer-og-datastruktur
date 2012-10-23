@@ -19,8 +19,10 @@ public class Main {
 		for(int i = 0; i < names.length; i++){
 			tree.insert(names[i]);
 		}
-		// test iteratoren
-		//oppgave 1
+		
+		/**
+		 * Oppgave 1
+		 */
 		System.out.println("Oppgave 1");
 		Iterator it = tree.inorderIterator();
 		while(it.hasNext()){
@@ -28,21 +30,35 @@ public class Main {
 		}
 		
 		System.out.println();
-		//Oppgave 2
-		//Skriv en preorder iterator for treet. Skriv kode som tester.
-		System.out.println("Oppgave 2");
+		
+		/**
+		 * Oppgave 2
+		 * Skriv en preorder iterator for treet. Skriv kode som tester.
+		 */
+		System.out.println("Oppgave 2A");
 		Iterator it1 = tree.preorderIterator();
 		while(it1.hasNext()){
 			System.out.println(it1.next());
 		}
-		
-		//oppgave 2B
-		//Skriv en postorder iterator for treet. Skriv kode som tester.
 		System.out.println();
+		
+		
+		/**
+		 * oppgave 2B
+		 *Skriv en postorder iterator for treet. Skriv kode som tester.
+		 */
+		System.out.println("Oppgave 2B");
 		Iterator it2 = tree.postorderIterator();
 		while(it2.hasNext()){
 			System.out.println(it2.next());
 		}
+		
+		/**
+		 * Oppgave 3
+		 * Skriv en metode som returnerer antall løvnoder i treet
+		 */
+		System.out.println("Oppgave 3");
+		System.out.println("Antall Løvnoder: " + tree.returnNumberOfLeaves());
 		
 		
 		

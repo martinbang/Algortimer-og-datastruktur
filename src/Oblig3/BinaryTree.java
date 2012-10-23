@@ -388,6 +388,7 @@ public class BinaryTree<E extends Comparable<E>> extends AbstractTree<E>
 		return tree1;
 	}
 
+
 	private void copy(TreeNode<E> root, BinaryTree<E> tree) {
 		if (root != null) {
 			tree.insert(root.element);
@@ -395,4 +396,21 @@ public class BinaryTree<E extends Comparable<E>> extends AbstractTree<E>
 			copy(root.right, tree);
 		}
 	}
+	
+	
+	public int returnNumberOfLeaves(){
+		return numberOfLeaves(root);
+	}
+	/**
+	 * Oppgave 3
+	 * Skriv en metode som returnerer antall løvnoder i treet.
+	 */
+	public int numberOfLeaves(TreeNode<E> root){
+		if(root == null) 
+			return 0;
+		if(root.left == null && root.right == null)
+			return 1;
+		return numberOfLeaves(root.left) + numberOfLeaves(root.right);
+	}
 }
+
