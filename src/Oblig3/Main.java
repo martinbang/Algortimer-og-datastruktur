@@ -77,6 +77,13 @@ public class Main {
 		System.out.println("Min: " + tree.findMin());
 		System.out.println("Max: " + tree.findMax());
 		
+		/**
+		 * Oppgave 2: «Provide an implementation of HashSet using separate chaining
+		 */
+		HashSet<String> has = new HashSet<String>();
+		has.add("kake");
+		System.out.println(has.getMatch("kake"));
+		
 	}//end of main
 
 }//end of class
