@@ -41,9 +41,11 @@ public class Tree {
 
 	private void inorderHelper(TreeNode node) {
 		// DIN KODE
+	
+		
 	} // end method inorderHelper
+	
 		// begin postorder traversal
-
 	public void postorderTraversal() {
 		postorderHelper(root);
 	} // end method postorderTraversal

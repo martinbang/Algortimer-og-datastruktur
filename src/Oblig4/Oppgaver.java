@@ -8,7 +8,11 @@ import java.io.IOException;
 
 public class Oppgaver {
 	
-	String textFile = "oppg1.txt";
+	//textFiles
+	String oppg1Text= "oppg1.txt";
+	String oppg2Text = "oppg2.txt";
+	
+	ReadFromFile r1, r2;
 	
 	//Constructor
 	public Oppgaver(){
@@ -18,22 +22,36 @@ public class Oppgaver {
 	/**
 	 * Metode for oppgave 1.
 	 * Leser inn svar fra oppgave 1 flervalgs spørsmål
+	 * @link ReadFromFile.java
 	 * @param s
 	 * @throws IOException 
 	 */
 	public void Oppgave1(String s) throws IOException{
-		File f = new File("oppg1.txt");
-		FileReader fr = new FileReader(f);
-		BufferedReader br = new BufferedReader(fr);
+		r1 = new ReadFromFile();
+		r1.ReadFile(oppg1Text);
+	
+	}//end of Oppgave1
+	
+	/**
+	 * Metode for oppgave 2
+	 * Leser inn svar fra oppgave 2 flervalgs
+	 * @link ReadFromFile.java
+	 * @param s
+	 * @throws IOException
+	 */
+	public void Oppgave2(String s) throws IOException{
 		
-		StringBuffer sb = new StringBuffer();
-		String eachLine = br.readLine();
+		r2 = new ReadFromFile();
+		r2.ReadFile(oppg2Text);
+	}//end of oppgave2
+	
+	
+	/**
+	 * Oppgave 3. 
+	 * @link TreeNode.java && Tree.java 
+	 */
+	public void Oppgave3(){
 		
-		while(eachLine != null){
-			sb.append(eachLine);
-			sb.append("\n");
-			eachLine = br.readLine();
-		}//end of while
-		System.out.println(sb.toString());
-	}
-}
+	}//end of oppgave3
+	
+}//end of class

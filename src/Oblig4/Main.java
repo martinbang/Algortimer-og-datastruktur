@@ -14,19 +14,26 @@ public class Main {
 		//variabler
 		String textFile = ("oppg1.txt");
 		//object
-		Oppgaver oppg1;
+		Oppgaver oppg1, oppg2;
 		
 		
 		/**
 		 * Oppgave 1
 		 */
+		System.out.println("Oppgave 1:\n");
 		oppg1 = new Oppgaver();
 		oppg1.Oppgave1("Oppgave 1");
 		
+		/**
+		 * Oppgave 2
+		 */
+		System.out.println("Oppgave 2:\n");
+		oppg2 = new Oppgaver();
+		oppg2.Oppgave2("oppgave 2:");
 		
-		
-		
-		System.out.println("Oppgave 2: ");
+		/**
+		 * Oppgave 3
+		 */
 
 	}
 

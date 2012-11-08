@@ -1,6 +1,7 @@
 package Oblig4;
 
 class TreeNode {
+	
 	// package access members
 	TreeNode leftNode; // left node
 	int data; // node value
