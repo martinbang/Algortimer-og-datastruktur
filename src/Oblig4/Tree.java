@@ -41,6 +41,11 @@ public class Tree {
 
 	private void inorderHelper(TreeNode node) {
 		// DIN KODE
+		if(node == null)
+			return;
+		System.out.println(node.data);
+		inorderHelper(node.leftNode);
+		inorderHelper(node.rightNode);
 	
 		
 	} // end method inorderHelper
@@ -53,5 +58,32 @@ public class Tree {
 
 	private void postorderHelper(TreeNode node) {
 		// DIN KODE
+		if(node == null)
+			return;
+		System.out.println(node.data);
+		postorderHelper(node.leftNode);
+		postorderHelper(node.rightNode);
 	} // end method postorderHelper
+	
+	
+	public void finMin(){
+		if(root == null)
+			return null;
+		
+		return finMin(root);
+		
+		
+	}//end of finmin
+	
+	public void finMin(TreeNode node){
+		
+		if(node == null)
+			return null;
+		if(node.leftNode != null)
+			return findMin(node.leftNode);
+		
+		return node.data;
+		
+	}//finMin treeNode node
+	
 } // end class Tree
